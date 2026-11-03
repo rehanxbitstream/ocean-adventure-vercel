@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Adventure — Deep Sea Quest</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="brand"><span class="logo">✦</span><div><small>DEEP SEA ARCADE</small><h1>OCEAN <b>ADVENTURE</b></h1></div></header>
+  <section class="game">
+    <div class="stage">
+      <canvas id="gameCanvas" width="1200" height="675"></canvas>
+      <div class="hud">
+        <div class="stat"><span class="ico star">★</span><div><small>SCORE</small><strong id="score">00000</strong></div></div>
+        <div class="stat"><span class="ico">🏆</span><div><small>BEST</small><strong id="bestScore">00000</strong></div></div>
+        <div class="stat"><span class="ico">⚡</span><div><small>LEVEL</small><strong id="level">1</strong></div></div>
+        <div class="stat"><span class="ico">🛡</span><div><small>SHIELD</small><strong id="shieldStatus">—</strong></div></div>
+        <div class="stat"><span class="ico heart">♥</span><div><small>LIVES LEFT</small><strong id="lives">3</strong></div></div>
+        <div class="stat oxygen"><span class="ico tank">O₂</span><div class="oxy"><small>OXYGEN LEVEL <b id="oxygenText">100%</b></small><div class="bar"><i id="oxygenBar"></i></div></div></div>
+        <div class="stat depth"><span class="ico">⌁</span><div><small>DEPTH</small><strong id="depth">0 m</strong></div></div>
+        <button id="sound" title="Mute sound" aria-label="Mute sound">♫</button><button id="pause" title="Pause">Ⅱ</button>
+      </div>
+      <div id="overlay" class="overlay"><div class="panel">
+        <span class="spark">✧</span><small id="panelKicker">YOUR UNDERWATER JOURNEY BEGINS</small>
+        <h2 id="panelTitle">Dive Into<br><em>Adventure</em></h2>
+        <p id="panelText">Explore mysterious ocean caves, collect pearls and treasure chests, refill your oxygen, and avoid dangerous sea creatures.</p>
+        <div id="resultStats" class="result-stats hidden" aria-live="polite">
+          <div><small>FINAL SCORE</small><strong id="finalScore">00000</strong></div>
+          <div><small>BEST SCORE</small><strong id="finalBest">00000</strong></div>
+          <div><small>LEVEL REACHED</small><strong id="finalLevel">1</strong></div>
+          <div><small>DISTANCE</small><strong id="finalDistance">0 m</strong></div>
+          <div><small>OXYGEN USED</small><strong id="finalOxygen">0%</strong></div>
+          <p id="recordMessage" class="record-message"></p>
+        </div>
+        <button id="play">START DIVING <b>→</b></button>
+        <div class="keys" id="keyGuide"><span>← → <small>MOVE</small></span><span>↑ / SPACE <small>SWIM UP</small></span><span>↓ <small>DIVE</small></span><span>P <small>PAUSE</small></span></div>
+      </div></div>
+      <div id="toast"></div>
+    </div>
+
+    <div class="touch-controls" id="touchControls" aria-label="Touch movement controls">
+      <div class="touch-cluster">
+        <button type="button" class="touch-btn up" data-key="ArrowUp" aria-label="Swim up">▲</button>
+        <div class="touch-row">
+          <button type="button" class="touch-btn" data-key="ArrowLeft" aria-label="Move left">◀</button>
+          <button type="button" class="touch-btn" data-key="ArrowDown" aria-label="Dive down">▼</button>
+          <button type="button" class="touch-btn" data-key="ArrowRight" aria-label="Move right">▶</button>
+        </div>
+      </div>
+      <span class="touch-hint">TOUCH TO SWIM</span>
+    </div>
+    <div class="legend"><span>◉ Pearls <b>+10</b></span><span>✧ Golden pearls <b>+30</b></span><span>▣ Treasure chests <b>+50</b></span><span>✹ Avoid sea mines</span><span class="note">OXYGEN IS YOUR LIFELINE</span></div>
+  </section>
+  <footer>AN UNDERWATER ARCADE EXPERIENCE · BUILT FOR THE BRAVE</footer>
+</main>
+<script src="game.js"></script>
+</body></html>
